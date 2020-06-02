@@ -14,6 +14,7 @@
 body {
   font-family: "Poppins", sans-serif;
   line-height: 1.4;
+  color: var(--color-white);
 }
 
 .menu {
@@ -32,7 +33,6 @@ body {
   height: 60px;
   align-items: center;
 
-  color: var(--color-white);
   font-size: 1.21rem;
 }
 
@@ -55,7 +55,6 @@ body {
   font-size: 3.48rem;
   font-family: "Raleway", sans-serif;
   font-weight: 700px;
-  color: var(--color-white);
 }
 
 .page-top__subtitle {
@@ -76,7 +75,7 @@ body {
 
   text-align: center;
   border-bottom: 2px solid white;
-  color: var(--color-white);
+
   font-size: 2.2rem;
   font-family: "Raleway", sans-serif;
   font-weight: 700;
@@ -91,7 +90,7 @@ body {
   background-color: var(--color-gray);
 
   text-align: center;
-  color: var(--color-white);
+
   font-size: 1.16rem;
 }
 
@@ -121,3 +120,49 @@ body {
   font-family: "Poppins", sans-serif;
   font-weight: 500;
 }
+
+.page-bottom__title {
+  font-size: 2.2rem;
+  font-family: "Raleway", sans-serif;
+  font-weight: 700px;
+}
+
+.page-bottom__subtitle {
+  font-weight: 200;
+  font-style: italic;
+  font-size: 0.95rem;
+}
+
+.social-media__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  background-color: var(--color-gray);
+  text-align: center;
+  height: 80vh;
+}
+
+.social-media__list {
+  display: flex;
+  list-style: none;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
+  width: 80%;
+  margin: 2rem auto 0;
+}
+
+.social-media__item {
+  font-size: 1.35rem;
+  padding: 0.5rem 1rem;
+}
+
+.fab,
+.fas {
+  font-family: FontAwesome;
+  color: var(--color-white);
+  margin-right: 5px;
+}
+
