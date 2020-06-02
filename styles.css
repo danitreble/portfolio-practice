@@ -107,18 +107,22 @@ body {
 
 .project__button {
   display: block;
-  width: 170px;
+  width: 150px;
   margin: 0 auto;
 
   background-color: var(--color-gray);
   color: var(--color-white);
 
   border: none;
-  padding: 10px 20px;
+  padding: 10px 10px;
 
   font-size: 1.1rem;
   font-family: "Poppins", sans-serif;
   font-weight: 500;
+}
+
+.fa-chevron-right {
+  margin-left: 10px;
 }
 
 .page-bottom__title {
@@ -163,6 +167,22 @@ body {
 .fas {
   font-family: FontAwesome;
   color: var(--color-white);
-  margin-right: 5px;
 }
+
+.page-footer {
+  text-align: center;
+  padding: 1rem 0 2rem;
+ 
+  border-top: 4px solid var(--color-red);
+  background-color: var(--color-gray);
+}
+
+.page-footer__text {
+  width: 85%;
+  font-size: 1rem;
+  margin: 1.5rem auto 2rem;
+  font-weight: 300;
+  text-shadow: 1px 1px 2px black;
+}
+
 
