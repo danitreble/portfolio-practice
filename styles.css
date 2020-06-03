@@ -1,14 +1,18 @@
 :root {
-  --color-red: #be3144;
-  --color-white: #f0f0f0;
+  --color-blue: #3493d1;
+  --color-white: #dce8e8;
   --color-gray: #303841;
-  --color-blue: #45567d;
+  --color-orange: #b56214;
 }
 
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -22,22 +26,37 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  background-color: var(--color-red);
+  background-color: var(--color-blue);
+  box-shadow: 4px 0px 2px 2px var(--color-gray);
 }
 
 .menu__item-list {
   display: flex;
   justify-content: center;
-  list-style: none;
-
+ 
   height: 60px;
-  align-items: center;
 
+  list-style: none;
   font-size: 1.21rem;
 }
 
+a,
+a:any-link {
+  text-decoration: none;
+  color: var(--color-white);
+}
+
 .menu__item {
-  padding: 1.1rem;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  
+  height: 100%;
+  padding: 0 16px;
+}
+
+.menu__item:hover{
+  background-color: var(--color-orange);
 }
 
 .page-top {
@@ -58,7 +77,7 @@ body {
 }
 
 .page-top__subtitle {
-  color: var(--color-red);
+  color: var(--color-blue);
   font-weight: 200;
   font-style: italic;
   font-size: 1.74rem;
@@ -66,7 +85,7 @@ body {
 
 .project__container {
   background-color: var(--color-blue);
-  padding: 10% 0;
+  padding: 50px 0 70px;
 }
 
 .project__title {
@@ -74,7 +93,7 @@ body {
   margin: 0 auto 55px;
 
   text-align: center;
-  border-bottom: 2px solid white;
+  border-bottom: 2px solid var(--color-white);
 
   font-size: 2.2rem;
   font-family: "Raleway", sans-serif;
@@ -92,6 +111,8 @@ body {
   text-align: center;
 
   font-size: 1.16rem;
+
+  cursor: pointer;
 }
 
 .project__image {
@@ -105,6 +126,16 @@ body {
   line-height: 60px;
 }
 
+.code {
+  color: orange;
+  opacity: 0;
+  transition: opacity 300ms;
+}
+
+.project:hover .code {
+  opacity: 1;
+}
+
 .project__button {
   display: block;
   width: 150px;
@@ -116,13 +147,25 @@ body {
   border: none;
   padding: 10px 10px;
 
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-family: "Poppins", sans-serif;
   font-weight: 500;
+
+  cursor: pointer;
+  transition: background-color 300ms;
+}
+
+.project__button:hover {
+  background-color: var(--color-orange);
+}
+
+.project__button:hover .fa-chevron-right {
+  transform: translateX(2px);
 }
 
 .fa-chevron-right {
-  margin-left: 10px;
+  margin-left: 8px;
+  transition: transform 300ms;
 }
 
 .page-bottom__title {
@@ -134,7 +177,7 @@ body {
 .page-bottom__subtitle {
   font-weight: 200;
   font-style: italic;
-  font-size: 0.95rem;
+  font-size: 1rem;
 }
 
 .social-media__container {
@@ -161,6 +204,14 @@ body {
 .social-media__item {
   font-size: 1.35rem;
   padding: 0.5rem 1rem;
+  cursor: pointer;
+  text-shadow: 2px 2px 1px black;
+
+  transition: transform 300ms;
+}
+
+.social-media__item:hover {
+  transform: translateY(5px);
 }
 
 .fab,
@@ -171,18 +222,90 @@ body {
 
 .page-footer {
   text-align: center;
-  padding: 1rem 0 2rem;
+  padding: 1rem 2rem 2rem;
  
-  border-top: 4px solid var(--color-red);
+  border-top: 4px solid var(--color-blue);
   background-color: var(--color-gray);
 }
 
 .page-footer__text {
-  width: 85%;
   font-size: 1rem;
   margin: 1.5rem auto 2rem;
   font-weight: 300;
   text-shadow: 1px 1px 2px black;
 }
 
+@media only screen and (min-width: 461px) {
+  .menu__item-list {
+    justify-content: flex-end;
+    font-size: 1.3rem;
+    height: 65px;
+    margin-right: 30px;
+  }
 
+  .page-bottom__title {
+    font-size: 3.5rem;
+  }
+
+  .page-footer {
+    display: flex;
+    justify-content: space-around;
+    text-align: left;
+  }
+
+  .page-footer__text {
+    font-size: 1.05rem;
+    margin: 1.5rem 1rem;
+  }
+}
+
+@media only screen and (min-width: 640px) {
+  .menu__item-list {
+    height: 70px;
+  }
+
+  .project__container {
+    padding: 90px 0 80px;
+  }
+
+  .project__title {
+    font-size: 2.5rem;
+    padding: 0;
+    max-width: 640px;
+    display: block;
+    justify-content: center;
+  }
+
+@media only screen and (min-width: 732px) {
+  .project__grid {
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 30px;
+  }
+
+  .project {
+    width: 45%;
+    margin: 0px auto 30px;
+  }
+
+  .project__image {
+    height: calc(100% - 4rem);
+    object-fit: cover;
+  }
+}
+
+@media only screen and (min-width: 1093px) {
+  .project__grid {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+  
+  .project {
+    width: 30%;
+    margin: 0px auto 30px;
+  }
+
+  .social-media__item {
+    font-size: 1.5rem;
+  }
+}
